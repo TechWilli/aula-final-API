@@ -6,7 +6,7 @@ const ObjectID = require('mongodb').ObjectID
 
 const app = express();
 
-app.use(ExpressMongoDb('mongodb://localhost/hamburgueria'));
+app.use(ExpressMongoDb('mongodb://hamburgueria:hamburgueria123@165.227.221.155/hamburgueria'));
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -110,4 +110,4 @@ app.delete('/hamburguer/:id', (req, res) => {
 });
 
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
